@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  bargainsforcouples.microservice:
+    image: ${DOCKER_REGISTRY-}bargainsforcouplesmicroservice
+    build:
+      context: .
+      dockerfile: BargainsForCouples.MicroService/Dockerfile
