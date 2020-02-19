@@ -7,9 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BargainsForCouples.MicroSer
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3469CA6E-909F-4985-87D2-066707F4F767}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBeds.BargainsForCouples.UnitTest", "..\WebBeds.BargainsForCouples.UnitTest\WebBeds.BargainsForCouples.UnitTest.csproj", "{E7FDB9A8-2A8A-4F32-A6C1-A3D96907CB6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebBeds.BargainsForCouples.UnitTest", "..\WebBeds.BargainsForCouples.UnitTest\WebBeds.BargainsForCouples.UnitTest.csproj", "{E7FDB9A8-2A8A-4F32-A6C1-A3D96907CB6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBeds.BargainsForCouples.Core", "..\WebBeds.BargainsForCouples.Core\WebBeds.BargainsForCouples.Core.csproj", "{D64FE67E-123D-44A6-9490-1482539825EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebBeds.BargainsForCouples.Core", "..\WebBeds.BargainsForCouples.Core\WebBeds.BargainsForCouples.Core.csproj", "{D64FE67E-123D-44A6-9490-1482539825EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F0CADB5-478F-4E3F-BBDA-27E83EFE41C1}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
