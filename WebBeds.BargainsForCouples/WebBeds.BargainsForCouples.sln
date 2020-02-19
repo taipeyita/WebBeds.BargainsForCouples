@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BargainsForCouples.MicroService", "BargainsForCouples.MicroService\BargainsForCouples.MicroService.csproj", "{6AE71CE8-C6F0-42F0-A4D6-D85CDE40960A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BargainsForCouples.MicroService", "BargainsForCouples.MicroService\BargainsForCouples.MicroService.csproj", "{6AE71CE8-C6F0-42F0-A4D6-D85CDE40960A}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3469CA6E-909F-4985-87D2-066707F4F767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBeds.BargainsForCouples.UnitTest", "..\WebBeds.BargainsForCouples.UnitTest\WebBeds.BargainsForCouples.UnitTest.csproj", "{E7FDB9A8-2A8A-4F32-A6C1-A3D96907CB6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBeds.BargainsForCouples.Core", "..\WebBeds.BargainsForCouples.Core\WebBeds.BargainsForCouples.Core.csproj", "{D64FE67E-123D-44A6-9490-1482539825EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{3469CA6E-909F-4985-87D2-066707F4F767}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3469CA6E-909F-4985-87D2-066707F4F767}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3469CA6E-909F-4985-87D2-066707F4F767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7FDB9A8-2A8A-4F32-A6C1-A3D96907CB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FDB9A8-2A8A-4F32-A6C1-A3D96907CB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FDB9A8-2A8A-4F32-A6C1-A3D96907CB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FDB9A8-2A8A-4F32-A6C1-A3D96907CB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64FE67E-123D-44A6-9490-1482539825EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64FE67E-123D-44A6-9490-1482539825EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64FE67E-123D-44A6-9490-1482539825EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64FE67E-123D-44A6-9490-1482539825EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
