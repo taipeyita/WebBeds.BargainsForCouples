@@ -11,7 +11,11 @@ namespace BargainsForCouples.MicroService.Filters
 {
     /// <summary>
     /// Attribute that caches request data. By doing this we can speed up the response to be less than 1 minute
+    /// 
     /// </summary>
+    /// 
+
+       //TODO cache is wrong, need to chache based on destination Id and nights
     public class CacheFilter : TypeFilterAttribute
     {
         //TODO This filter needs to be more generic and generic code improvements need to be made 
