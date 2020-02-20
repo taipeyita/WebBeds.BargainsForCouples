@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -13,6 +14,7 @@ namespace BargainsForCouples.MicroService.Filters
     /// </summary>
     public class CacheFilter : TypeFilterAttribute
     {
+        //TODO This filter needs to be more generic and generic code improvements need to be made 
 
         public CacheFilter() : base(typeof(CacheFilterInstance)) { }
        
@@ -46,9 +48,10 @@ namespace BargainsForCouples.MicroService.Filters
                     var result = resultContext.Result;
                     if (result != null)
                     {
-                        var value = result.GetType().GetProperty("Value").GetValue(result, null);
+                        // TODO - This code needs to be generic
+                        var value = result.GetType().GetProperty("Value").GetValue(result, null) as List<BargainsForCouples.MicroService.Dto.PropertyBO>;
 
-                        if (value != null)
+                        if (value != null && value.Count > 0)
                         {
                             await SetTheCache(cacheKey, value);
                         }
