@@ -14,10 +14,13 @@ namespace BargainsForCouples.MicroService.Filters
     /// 
     /// </summary>
     /// 
-    public class CacheFilter : TypeFilterAttribute
+    public class CacheFilter :  TypeFilterAttribute
     {
-
-        public CacheFilter() : base(typeof(CacheFilterInstance)) { }
+        private static int _CacheTime;
+        public CacheFilter(int cacheTime) : base(typeof(CacheFilterInstance)) 
+        {
+            _CacheTime = cacheTime;
+        }
        
 
         class CacheFilterInstance : IAsyncActionFilter
@@ -68,7 +71,7 @@ namespace BargainsForCouples.MicroService.Filters
                 };
 
                 var cacheOptions = new DistributedCacheEntryOptions();
-                cacheOptions.SetAbsoluteExpiration(TimeSpan.FromMinutes(60)); // TODO -- Move this to appsettings.json
+                cacheOptions.SetAbsoluteExpiration(TimeSpan.FromMinutes(_CacheTime)); 
                 var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = contractResolver };
                 jsonSerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 var jsonString = JsonConvert.SerializeObject(value, jsonSerializerSettings);

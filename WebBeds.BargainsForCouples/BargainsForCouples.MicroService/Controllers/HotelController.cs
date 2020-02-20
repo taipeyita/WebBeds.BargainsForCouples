@@ -22,7 +22,7 @@ namespace BargainsForCouples.MicroService.Controllers
         [Route("GetBargain")]
         [ProducesResponseType(typeof(Model.Property), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [CacheFilter]
+        [CacheFilter(60)]
         public async Task<ActionResult<List<PropertyBO>>> GetBargainsAsync(int destinationId, int nights)
         {
             List<PropertyBO> hotels = await _BargainService.FindBargains(destinationId, nights);
