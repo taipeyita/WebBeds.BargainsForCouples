@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BargainsForCouples.MicroService.Model
+﻿namespace BargainsForCouples.MicroService.Model
 {
     /// <summary>
     /// Hotel related information 

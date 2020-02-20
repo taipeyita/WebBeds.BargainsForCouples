@@ -47,7 +47,7 @@ namespace BargainsForCouples.MicroService.Services
             }
             catch(Exception ex)
             {
-                // Do no throw exception, rather log it
+                // Do not throw exception, rather log it
             }
             return new List<Property>();
         }

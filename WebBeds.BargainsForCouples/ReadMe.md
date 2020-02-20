@@ -22,4 +22,4 @@ if you run the application using docker-compose.
 
 
 #Once docker is running here is an example of the url to be used 
-https://localhost:32776/api/Hotel/GetBargain?destinationId=12345&nights=9
+{Scheme}://{ServiceHost}:{ServicePort}/api/Hotel/GetBargain?destinationId=12345&nights=9

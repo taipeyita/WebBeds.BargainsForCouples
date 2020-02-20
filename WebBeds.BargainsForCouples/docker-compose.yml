@@ -11,5 +11,6 @@ services:
     build:
       context: .
       dockerfile: BargainsForCouples.MicroService/Dockerfile
+    container_name: bargainsforcouples.api
     depends_on:
         - redis

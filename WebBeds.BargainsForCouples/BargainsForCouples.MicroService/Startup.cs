@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Polly;
 using Polly.Extensions.Http;
 namespace BargainsForCouples.MicroService
@@ -24,10 +25,16 @@ namespace BargainsForCouples.MicroService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bargains For More", Version = "v1" });
+            });
+
             services.Configure<BargainsForCouplesSettings>(Configuration);
             services.AddHttpClient<IBargainsForCouplesApiClient, BargainsForCouplesApiClient>()
                 .SetHandlerLifetime(TimeSpan.FromMinutes(5))
-                //Implemented Polly to provides resilience and transient-fault handling capabilities
+                //Implemented Polly to provide resilience and transient-fault handling capabilities
                 .AddPolicyHandler((x) =>
                 {
                     Random jitterer = new Random();
@@ -48,6 +55,7 @@ namespace BargainsForCouples.MicroService
             services.AddTransient<IBargainService, BargainService>();
             services.AddAutoMapper(typeof(Startup));
 
+            //added Cache functionality to limit response time to < 1sec
             services.AddDistributedRedisCache(options =>
             {
                 string redisHostName = Configuration.GetSection("RedisConfig").GetValue<string>("RedisHostName");
@@ -68,6 +76,13 @@ namespace BargainsForCouples.MicroService
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bargains For More V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {
