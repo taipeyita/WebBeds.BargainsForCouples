@@ -9,7 +9,7 @@ using Newtonsoft.Json.Serialization;
 namespace BargainsForCouples.MicroService.Filters
 {
     /// <summary>
-    /// Attribute that caches request data
+    /// Attribute that caches request data. By doing this we can speed up the response to be less than 1 minute
     /// </summary>
     public class CacheFilter : TypeFilterAttribute
     {

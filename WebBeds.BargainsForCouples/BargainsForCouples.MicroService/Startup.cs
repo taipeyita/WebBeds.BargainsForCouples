@@ -27,7 +27,7 @@ namespace BargainsForCouples.MicroService
             services.Configure<BargainsForCouplesSettings>(Configuration);
             services.AddHttpClient<IBargainsForCouplesApiClient, BargainsForCouplesApiClient>()
                 .SetHandlerLifetime(TimeSpan.FromMinutes(5))
-
+                //Implemented Polly to provides resilience and transient-fault handling capabilities
                 .AddPolicyHandler((x) =>
                 {
                     Random jitterer = new Random();
