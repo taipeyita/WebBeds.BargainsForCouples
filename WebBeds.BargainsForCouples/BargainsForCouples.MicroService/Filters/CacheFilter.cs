@@ -14,11 +14,8 @@ namespace BargainsForCouples.MicroService.Filters
     /// 
     /// </summary>
     /// 
-
-       //TODO cache is wrong, need to chache based on destination Id and nights
     public class CacheFilter : TypeFilterAttribute
     {
-        //TODO This filter needs to be more generic and generic code improvements need to be made 
 
         public CacheFilter() : base(typeof(CacheFilterInstance)) { }
        
@@ -80,7 +77,7 @@ namespace BargainsForCouples.MicroService.Filters
 
             private string GetTheCacheKey(ActionExecutingContext context)
             {
-                var cacheKey = context.HttpContext.Request.Path.Value.Replace("/", "-");
+                var cacheKey = context.HttpContext.Request.QueryString.ToString();
                 return cacheKey;
             }
         }
